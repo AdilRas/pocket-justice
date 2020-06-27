@@ -28,11 +28,11 @@ mongoose.connect(
 );
 
 /* --- CREATE REQUESTS --- */ 
-server.get('/', (req: any, res: any) => {
+server.get('/', (req: any, res: any): void => {
     res.send('HOME');
 });
 
 /* START LISTENING */
-server.listen(port, () => {
+server.listen(port, (): void => {
     console.log(`Listening on port ${ port }...`)
 });
