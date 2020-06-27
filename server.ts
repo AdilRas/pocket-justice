@@ -10,11 +10,11 @@ server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 
 /* CONNECT TO DATABASE */
-// mongoose.connect(
-//     '',
-//     { useNewUrlParser: true },
-//     (): void => console.log('Connected to db.')
-// );
+mongoose.connect(
+    process.env.DB_CONNECTION,
+    { useNewUrlParser: true },
+    (): void => console.log('Connected to db.')
+);
 
 /* CREATE REQUESTS */
 server.get('/', (req: any, res: any): any => {
