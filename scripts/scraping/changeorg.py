@@ -1,6 +1,7 @@
 import requests as req
 from bs4 import BeautifulSoup as BS
 from models.Petition import Petition
+
 BASE_URL = "https://www.change.org"
 
 res = req.get('https://www.change.org/petitions')
