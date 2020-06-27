@@ -1,3 +1,5 @@
+import { stringify } from "querystring";
+
 /* IMPORTS */
 const express = require('express');
 const server = express();
@@ -14,12 +16,21 @@ server.use(express.json());
 /* --- CONNECT TO DATABASE --- */
 mongoose.connect(
     process.env.DB_CONNECTION,
-    { useNewUrlParser: true },
-    (): void => console.log('Connected to db.')
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    },
+    (error: any) => {
+        if (error !== null) {
+            console.log(error.message);
+        } else {
+            console.log('Connected to database!');
+        }
+    }
 );
 
-/* --- CREATE REQUESTS --- */
-server.get('/', (req: any, res: any): any => {
+/* --- CREATE REQUESTS --- */ 
+server.get('/', (req: any, res: any) => {
     res.send('HOME');
 });
 
