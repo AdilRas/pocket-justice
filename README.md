@@ -1,13 +1,16 @@
 # NODE/Express
 Used for backend.
-Run npm install to fetch dependencies.
+Run npm install in the project directory to fetch dependencies.
+## Starting backend
+Run `npm start` in the project directory to start the node/express backend.
+Default port is 5000. Visit localhost:5000/ to check if its running.
 
 # REACT
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Run `npm install` in the /client directory to install dependencies.
 ## Available Scripts
 
-In the project directory, you can run:
+In the client directory, you can run:
 
 ### `npm start`
 
