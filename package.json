@@ -1,0 +1,36 @@
+{
+  "name": "pocket-justice",
+  "version": "1.0.0",
+  "description": "A platform dedicated to contributing to social justice by providing easy access to meaningful petitions from across the web.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdilRas/pocket-justice.git"
+  },
+  "keywords": [
+    "social",
+    "justice",
+    "petition"
+  ],
+  "author": "Adil Rasiyani, Nikhil Singh, James Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdilRas/pocket-justice/issues"
+  },
+  "homepage": "https://github.com/AdilRas/pocket-justice#readme",
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.14",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.20",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.5"
+  }
+}
