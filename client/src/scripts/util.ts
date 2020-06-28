@@ -7,10 +7,7 @@ const fetchData = async () => {
             'Access-Control-Allow-Credentials': 'true'
         }
     });
-    console.log(response.data);
+    
+    return response.data;
 }
-/*
-
-*/
-
 export { fetchData };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TopNav from "../topNav/topNav";
 import Feed from "../feed/feed";
-import { fetchData } from './scripts';
+import { fetchData } from '../../scripts/util';
 
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 // import feed from "../components/feed/feed";
