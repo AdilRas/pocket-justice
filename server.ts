@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv/config');
 
+const petitionsRoute = require('./routes/Petitions');
+
 /* --- CONSTANTS --- */
 const port = process.env.PORT || 5000;
 const clientURL = process.env.CLIENT_URL || 'http://localhost:3000';
@@ -16,6 +18,7 @@ server.use(cors({
 }));
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
+server.use('/petitions', petitionsRoute);
 
 /* --- CONNECT TO DATABASE --- */
 mongoose.connect(
@@ -24,11 +27,12 @@ mongoose.connect(
         useNewUrlParser: true,
         useUnifiedTopology: true
     },
-    (error: any) => {
-        if (error !== null) {
-            console.log(error.message);
+    (status: any) => {
+        if (status !== null) {
+            console.log(status.message);
         } else {
             console.log('Connected to database!');
+            
         }
     }
 );
