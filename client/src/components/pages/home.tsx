@@ -1,25 +1,27 @@
 import React, { useState } from "react";
-import TopNav from "../components/topNav";
-import Feed from "../components/feed";
+import TopNav from "../topNav/topNav";
+import Feed from "../feed/feed";
+import { fetchData } from './scripts';
 
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
-import feed from "../components/feed";
+// import feed from "../components/feed/feed";
 
 const Home = () => {
   const [state, setState] = useState("hot");
 
   const handleMenuClick = (e: any) => {
+    fetchData();
     console.log("click ", e);
     setState(e.key);
     handleMenuSort(state);
   };
 
   const handleMenuSort = (key: any) => {
-    if (key == "hot") {
+    if (key === "hot") {
       // display sorted hot data
-    } else if (key == "new") {
+    } else if (key === "new") {
       // display sorted new data
-    } else if (key == "top") {
+    } else if (key === "top") {
       // display sorted top data
     }
   };
@@ -38,6 +40,7 @@ const Home = () => {
     <div>
       <div>
         <TopNav handleClick={handleMenuClick} state={state} />
+        <a href="#" onClick={fetchData}>Test</a> 
       </div>
       <div style={style}>
         <Feed />

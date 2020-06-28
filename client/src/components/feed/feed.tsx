@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Card } from "antd";
-import { Descriptions, Radio } from "antd";
 import { Progress } from "antd";
-import { FileExcelFilled } from "@ant-design/icons";
-import { stringify } from "querystring";
 
 const { Meta } = Card;
 const Feed = (props: any) => {
