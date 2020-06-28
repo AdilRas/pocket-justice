@@ -1,13 +1,13 @@
 import React from "react";
-import { Menu } from 'antd';
-import { FireOutlined, RiseOutlined, SettingOutlined } from '@ant-design/icons';
-
+import { Menu } from "antd";
+import { FireOutlined, RiseOutlined, SettingOutlined } from "@ant-design/icons";
 
 const TopNav = (props: any) => {
+  
   return (
     <div>
       <Menu
-        onClick={props.handleClick}
+        onClick={props.handleMenuClick}
         selectedKeys={[props.state]}
         mode="horizontal"
       >
@@ -23,6 +23,6 @@ const TopNav = (props: any) => {
       </Menu>
     </div>
   );
-}
+};
 
 export default TopNav;

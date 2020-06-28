@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "antd";
 import { Descriptions, Radio } from "antd";
 import { Progress } from "antd";
@@ -6,22 +6,28 @@ import { FileExcelFilled } from "@ant-design/icons";
 import { stringify } from "querystring";
 
 const { Meta } = Card;
-
 const Feed = (props: any) => {
+  const [signature, setSignature] = useState(50);
   return (
     <div>
       <Card
         hoverable
-        style={{ display: "flex"}}
+        style={{ display: "flex" }}
         cover={
           <img
+            style={{ height: "200px", width: "auto" }}
             alt="example"
             src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
           />
         }
       >
-        <Meta style={{width: 240, wordWrap: "break-word"}} title="Petition Title" description="Petition Description: asiohfewaofaoehwfawefiowwadsdwadsfwadafgawdafdffffffffffffffffffffffffffffffffffffffff" />
-        <Progress percent={50} />
+        <Meta
+          style={{ width: "500px", wordWrap: "break-word" }}
+          title="Rename the Edmund Pettus Bridge after Rep John Lewis"
+          description="Petition Description: asiohfewaofaoehwfawefiowwadsdwadsfwadafgawdafdffffffffffffffffffffffffffffffffffffffff"
+        />
+        <Progress percent={signature} style={{ display: "block" }} />
+        <p> signatures out of 500</p>
       </Card>
     </div>
   );
