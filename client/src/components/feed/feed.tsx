@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "antd";
 import { Progress } from "antd";
+import axios from 'axios';
 import { fetchData } from '../../scripts/util';
 import { getDefaultNormalizer } from "@testing-library/react";
 
@@ -8,15 +9,17 @@ const { Meta } = Card;
 const Feed = (props: any) => {
   const [petitions, setPetitions] = useState([]);
   const [cards, setCards] = useState([]);
-  
-  useEffect(() => {
-    fetchPetitions();
-  }, []);
 
-  const fetchPetitions = async () => {
-    const data = await fetchData();
-    setPetitions(data);
-  };
+  useEffect(() => {
+    axios.get('http://localhost:5000/petitions', {
+      headers: {
+        'Access-Control-Allow-Origin': 'http://localhost:3000',
+        'Access-Control-Allow-Credentials': 'true'
+      }
+    }).then((response: any) => {
+      setPetitions(response.data);
+    });
+  }, []);
 
   const formatPreview = (description: string): string => {
     const final = "";
