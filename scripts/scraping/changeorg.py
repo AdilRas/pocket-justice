@@ -7,6 +7,7 @@ BASE_URL = "https://www.change.org"
 res = req.get('https://www.change.org/petitions')
 src = res.content
 soup = BS(src, 'lxml')
+
 rawCards = soup.find_all('a', {"class": "link-block"})
 
 petitions = []
@@ -20,4 +21,4 @@ for card in rawCards:
     petition = Petition(title=title, description=desc, goal=goal, signatures=signatures, href=href)
     petitions.append(petition)
 
-print(petitions[0].toString())
+print(petitions[0].toString().encode('utf-8'))

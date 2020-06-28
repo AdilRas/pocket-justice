@@ -4,10 +4,12 @@ from models.Petition import Petition
 
 BASE_URL = 'https://www.thepetitionsite.com'
 
-res = req.get('https://www.thepetitionsite.com/browse-petitions/#hottest')
+res = req.get('https://www.thepetitionsite.com/browse-petitions')
 src = res.content
 soup = BS(src, 'lxml')
+print(soup)
 rawCards = soup.find_all('div', {"class": "petition"})
+
 
 petitions = []
 
