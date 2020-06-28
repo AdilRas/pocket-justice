@@ -23,8 +23,9 @@
   },
   "homepage": "https://github.com/AdilRas/pocket-justice#readme",
   "dependencies": {
-    "@types/express": "^4.17.6",
     "@types/node": "^14.0.14",
+    "@types/express": "^4.17.6",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.20",

@@ -2,7 +2,6 @@ import requests as req
 from bs4 import BeautifulSoup as BS
 from models.Petition import Petition
 
-BASE_URL = 'https://www.thepetitionsite.com'
 headers = {
     "User-Agent": "BeautifulSoup"
 }
