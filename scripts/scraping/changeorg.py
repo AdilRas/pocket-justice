@@ -9,7 +9,7 @@ src = res.content
 soup = BS(src, 'lxml')
 
 rawCards = soup.find_all('a', {"class": "link-block"})
-
+# print(soup.encode('utf-8'))
 petitions = []
 
 for card in rawCards:
