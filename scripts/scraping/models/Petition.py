@@ -1,14 +1,15 @@
 class Petition:
 
-    def __init__(self, title, href, signatures, goal, description):
-        self.title = title
-        self.href = href
-        self.description = description
-        self.goal = goal
-        self.signatures = signatures
+    def __init__(self, title, href, signatures="0", goal="0", description="No description", imageHref=""):
+        self.title = title.replace('"', '\'')
+        self.href = href.replace('"', '\'')
+        self.description = description.replace('"', '\'')
+        self.goal = goal.replace('"', '\'')
+        self.signatures = signatures.replace('"', '\'')
+        self.imageHref = imageHref.replace('"', '\'')
     
-    """ toString meant for testing purposes"""
     def toString(self):
+        """ toString meant for testing purposes"""
         out = ["["]
         out.append(self.title)
         out.append(self.href)
@@ -17,3 +18,6 @@ class Petition:
         out.append(self.goal)
         out.append("]")
         return "\n\t".join(out)
+
+    def toJsonString(self):
+        return f'{{"title": "{self.title}", "description": "{self.description}", "href": "{self.href}", "imageHref": "{self.imageHref}", "signatures": "{self.signatures}", "goal": "{self.goal}"}}'

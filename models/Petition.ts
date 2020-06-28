@@ -5,6 +5,7 @@ const daysTillExpiration = 7;
 const expirationTime = 1000 * 24 * 60 * 60 * daysTillExpiration;
 
 export const Petition = mongoose.Schema({
+    _id: String,
     title: {
         type: String,
         required: true
