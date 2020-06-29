@@ -36,7 +36,7 @@ router.post('/petitions', async (req: any, res: any) => {
     }
 });
 
-router.use(function (res: any, req: any) {
+router.get('*', function (res: any, req: any) {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
