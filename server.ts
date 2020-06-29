@@ -19,6 +19,7 @@ server.use(cors({
     origin: clientURL,
     credentials: true
 }));
+
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 server.use(express.static('client/build'));
