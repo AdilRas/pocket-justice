@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import logo from "./logo.svg";
-import "./Filter.css";
-import "../pages/node_modules/antd/dist/antd.css";
 import { Menu, Dropdown, message } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 
