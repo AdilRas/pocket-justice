@@ -11,9 +11,11 @@ const Feed = (props: any) => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    const REQUEST_URL =
-      process.env.REACT_APP_PROD_MODE || (process.env.REACT_APP_MODE === "integrated" ? "http://localhost:5000"
-        : process.env.REACT_APP_MODE === "development" ? "http://localhost:3000" : "http://pocket-justice.herokuapp.com"); 
+    const REQUEST_URL = (
+      process.env.REACT_APP_MODE === 'integrated' ? 'http://localhost:5000' : (
+          process.env.REACT_APP_MODE === 'production' ? 'http://pocket-justice.herokuapp.com' : 'http://localhost:3000'
+      )
+    );
     console.log(process.env.REACT_APP_MODE);
     axios.get(`${REQUEST_URL}/petitions`, {
       headers: {
