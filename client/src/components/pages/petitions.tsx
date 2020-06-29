@@ -4,7 +4,7 @@ import Feed from "../feed/feed";
 import { fetchData } from "../../scripts/util";
 import axios from "axios";
 
- // or 'antd/dist/antd.less'
+// or 'antd/dist/antd.less'
 // import feed from "../components/feed/feed";
 
 const Petitions = () => {
@@ -24,7 +24,9 @@ const Petitions = () => {
         petitions.sort((a: any, b: any) => a.signatures - b.signatures)
       );
     } else if (key === "new") {
-      // display sorted new data
+      setPetitions(
+        petitions.sort((a: any, b: any) => a.date - b.date)
+      );
     } else if (key === "top") {
       setPetitions(
         petitions.sort((a: any, b: any) => b.signatures - a.signatures)
@@ -55,12 +57,9 @@ const Petitions = () => {
     alignitems: "center",
   };
   return (
-    <div >
+    <div>
       <div>
-      <TopNav handleMenuClick={handleMenuClick} state={state} />
-        <a href="#" onClick={fetchData}>
-          Test
-        </a>
+        <TopNav handleMenuClick={handleMenuClick} state={state} />
       </div>
       <div style={style}>
         <Feed petitions={petitions} />
