@@ -1,8 +1,10 @@
 /* IMPORTS */
+import { scrape } from './scripts/controllers/scrape';
 const express = require('express');
 const server = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
+
 require('dotenv/config');
 
 const petitionsRoute = require('./routes/Petitions');
@@ -37,10 +39,10 @@ mongoose.connect(
     }
 );
 
-/* --- CREATE REQUESTS --- */ 
-server.get('/', (req: any, res: any): void => {
-    res.send('HOME');
-});
+/* SCRAPE DATA FROM PETITION SITES ON 30 MINUTE INTERVALS */
+setInterval(() => {
+    scrape();
+}, 1000 * 60 * 30);
 
 /* START LISTENING */
 server.listen(port, (): void => {
