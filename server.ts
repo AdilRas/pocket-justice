@@ -4,7 +4,7 @@ const express = require('express');
 const server = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
-
+const MONGODB_URI = require('./config/index');
 require('dotenv/config');
 
 const petitionsRoute = require('./routes/Petitions');
@@ -20,11 +20,12 @@ server.use(cors({
 }));
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
-server.use('/petitions', petitionsRoute);
+server.use(express.static('client/build'));
+server.use('/', petitionsRoute);
 
 /* --- CONNECT TO DATABASE --- */
 mongoose.connect(
-    process.env.DB_CONNECTION,
+    process.env.DB_CONNECTION || MONGODB_URI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
