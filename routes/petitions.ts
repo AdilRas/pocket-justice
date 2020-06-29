@@ -34,6 +34,8 @@ router.post('/petitions', async (req: any, res: any) => {
             message: err
         });
     }
+}, (err: any) => {
+        console.log(err);
 });
 
 router.get('*', function (res: any, req: any) {
