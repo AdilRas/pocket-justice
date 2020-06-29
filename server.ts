@@ -7,7 +7,7 @@ const cors = require('cors');
 const MONGODB_URI = require('./config/index');
 require('dotenv/config');
 const path = require('path');
-const pathToRouter = path.join(__dirname, "./routes/Petitions.ts");
+const pathToRouter = path.join(__dirname, "./routes/petitions");
 const petitionsRoute = require(pathToRouter);
 
 /* --- CONSTANTS --- */
