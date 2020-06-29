@@ -12,7 +12,7 @@ const petitionsRoute = require(pathToRouter);
 
 /* --- CONSTANTS --- */
 const port = process.env.PORT || 5000;
-const clientURL = process.env.CLIENT_URL || 'http://localhost:3000';
+const clientURL = process.env.CLIENT_URL || 'http://localhost:5000';
 
 /* --- MIDDLEWARE --- */
 server.use(cors({
