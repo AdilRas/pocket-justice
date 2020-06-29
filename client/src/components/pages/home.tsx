@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Typography } from "antd";
-import { Card } from 'antd';
-
-const { Title, Paragraph, Text } = Typography;
+import "./home.css";
 
 const Home = () => {
-  const { Meta } = Card;
   return (
-    <div>
-        <Card
-    hoverable
-    style={{ width: 240 }}
-    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-  >
-    <Meta title="Europe Street beat" description="www.instagram.com" />
-  </Card>
-    </div>
+      <div className="Pocketjustice">
+        <p className="titletext">Pocket Justice</p>
+        <p className="description">
+          The power to find all you want to know about #BLM and other movements
+          right in your pocket
+        </p>
+      </div>
   );
 };
 export default Home;

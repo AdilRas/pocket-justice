@@ -1,7 +1,11 @@
 .App {
   text-align: center;
 }
-
+.switcher {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

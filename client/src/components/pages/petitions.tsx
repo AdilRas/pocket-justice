@@ -35,16 +35,20 @@ const Petitions = () => {
   };
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/petitions", {
-        headers: {
-          "Access-Control-Allow-Origin": "http://localhost:3000",
-          "Access-Control-Allow-Credentials": "true",
-        },
-      })
-      .then((response: any) => {
-        setPetitions(response.data);
-      });
+    const REQUEST_URL = (
+      process.env.REACT_APP_MODE === 'integrated' ? 'http://localhost:5000' : (
+          process.env.REACT_APP_MODE === 'production' ? 'http://pocket-justice.herokuapp.com' : 'http://localhost:3000'
+      )
+    );
+    console.log(process.env.REACT_APP_MODE);
+    axios.get(`${REQUEST_URL}/petitions`, {
+      headers: {
+        'Access-Control-Allow-Origin': `${REQUEST_URL}`,
+        'Access-Control-Allow-Credentials': 'true'
+      }
+    }).then((response: any) => {
+      setPetitions(response.data);
+    });
   }, []);
 
   const style: {
