@@ -26,7 +26,7 @@ server.use('/', petitionsRoute);
 
 /* --- CONNECT TO DATABASE --- */
 mongoose.connect(
-    process.env.DB_CONNECTION || MONGODB_URI,
+    process.env.MONGODB_URI|| MONGODB_URI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
