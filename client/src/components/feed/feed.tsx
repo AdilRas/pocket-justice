@@ -13,7 +13,7 @@ const Feed = (props: any) => {
   useEffect(() => {
     axios.get('http://localhost:5000/petitions', {
       headers: {
-        'Access-Control-Allow-Origin': 'http://localhost:3000',
+        'Access-Control-Allow-Origin': `${process.env.PUBLIC_URL}`,
         'Access-Control-Allow-Credentials': 'true'
       }
     }).then((response: any) => {
