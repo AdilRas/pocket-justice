@@ -6,8 +6,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const MONGODB_URI = require('./config/index');
 require('dotenv/config');
-
-const petitionsRoute = require('./routes/Petitions');
+const path = require('path');
+const pathToRouter = path.join(__dirname, "./routes/Petitions.ts");
+const petitionsRoute = require(pathToRouter);
 
 /* --- CONSTANTS --- */
 const port = process.env.PORT || 5000;
