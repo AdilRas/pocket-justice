@@ -11,9 +11,10 @@ const Feed = (props: any) => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/petitions', {
+    const REQUEST_URL = process.env.NODE_ENV === 'production' ? 'http://pocket-justice.herokuapp.com' : 'http://localhost:5000'; 
+    axios.get(`${REQUEST_URL}/petitions`, {
       headers: {
-        'Access-Control-Allow-Origin': `http://pocket-justice.herokuapp.com`,
+        'Access-Control-Allow-Origin': `${REQUEST_URL}`,
         'Access-Control-Allow-Credentials': 'true'
       }
     }).then((response: any) => {
