@@ -1,7 +1,6 @@
-import { List, Avatar, Space } from "antd";
-import { MessageOutlined, LikeOutlined, StarOutlined } from "@ant-design/icons";
+import { List, Avatar } from "antd";
 import CardMetadata from './CardMetadata';
-import React, { useState, useEffect, Dispatch } from 'react';
+import React from 'react';
 
 export default function PetitionList({ petitions }: { petitions: any[] }) {  
 

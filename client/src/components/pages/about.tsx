@@ -34,7 +34,11 @@ const About = () => {
         </div>
         <div className="aboutUs-content-image">
           <div className="aboutUs-content-image-container">
-            <img src={image} style={{ height: "500px", width:"auto" }} />
+            <img
+              src={image}
+              style={{ height: "500px", width: "auto" }}
+              alt=""
+            />
           </div>
         </div>
       </div>

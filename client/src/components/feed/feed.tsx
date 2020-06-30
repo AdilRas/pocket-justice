@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./feed.module.css";
 import PetitionList from './petitionList';
 import CardMetadata from './CardMetadata';
@@ -34,7 +34,7 @@ const Feed = (props: any) => {
               content: getDescription(petition.description),
               imageHref: petition.imageHref
           });
-          console.log(`Added petition: ${petition.title}`);
+          // console.log(`Added petition: ${petition.title}`);
       }
       return listData;
   };

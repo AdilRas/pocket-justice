@@ -1,19 +1,20 @@
-import React, { useState, useEffect, Dispatch } from "react";
-import { Menu, Button, AutoComplete } from "antd";
+import React, { useState, Dispatch } from "react";
+import { Menu, Button } from "antd";
 import "./sideNav.css";
 
-import Icon, { HomeOutlined, ReadOutlined, TeamOutlined, MenuFoldOutlined, MenuUnfoldOutlined, MenuOutlined } from '@ant-design/icons';
+import { HomeOutlined, ReadOutlined, TeamOutlined, MenuOutlined } from '@ant-design/icons';
 import image1 from "./blm_logo_grey.png"
+import { useHistory } from "react-router-dom";
 
 const SideNav = (props: any) => {
-  const [selected, setSelected] : [any, Dispatch<string[]>] = useState([""]);
+  const [selected, setSelected] : [any, Dispatch<string[]>] = useState([window.location.pathname.substr(1)]);
   const [collapsed, setCollapsed] = useState(true);
+  const history = useHistory();
 
-  useEffect(() => {
-    const arr: string[] = [];
-    arr.push(window.location.pathname.substr(1));
-    setSelected(arr);
-  }, []);
+  function handleNav(e: any) {
+    history.push('/' + e.key);
+    setSelected([e.key]);
+  }
 
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -41,6 +42,7 @@ const SideNav = (props: any) => {
       <img
         src={image1}
         style={{ width: "100px", height: "auto", paddingTop: "5%" }}
+        alt=""
       />
       <Button
         type="primary"
@@ -56,7 +58,7 @@ const SideNav = (props: any) => {
         {React.createElement(MenuOutlined)}
       </Button>
       <Menu
-        onClick={props.handleNav}
+        onClick={handleNav}
         selectedKeys={selected}
         style={{
           height: "100%",

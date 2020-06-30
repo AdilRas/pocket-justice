@@ -1,23 +1,54 @@
 import React, { useState, useEffect } from "react";
 import TopNav from "../topNav/topNav";
 import Feed from "../feed/feed";
-import { fetchData } from "../../scripts/util";
 import axios from "axios";
-
-// or 'antd/dist/antd.less'
-// import feed from "../components/feed/feed";
+import Petition from "../../models/Petition";
 
 const Petitions = () => {
   const [state, setState] = useState("new");
-  const [petitions, setPetitions] = useState([]);
+  const [petitions, setPetitions] = useState([new Petition()]);
 
   const handleMenuClick = (e: any) => {
-    fetchData();
+
     console.log("click ", e);
     setState(e.key);
     handleMenuSort(e.key);
   };
 
+  useEffect(() => {
+    const REQUEST_URL =
+      process.env.REACT_APP_MODE === "integrated"
+        ? "http://localhost:5000"
+        : process.env.REACT_APP_MODE === "production"
+        ? "http://pocket-justice.herokuapp.com"
+        : "http://localhost:3000";
+    console.log(process.env.REACT_APP_MODE);
+    const arr: Petition[] = [];
+    axios
+      .get(`${REQUEST_URL}/petitions`, {
+        headers: {
+          "Access-Control-Allow-Origin": `${REQUEST_URL}`,
+          "Access-Control-Allow-Credentials": "true",
+        },
+      })
+      .then((response: any) => {
+        for (const item of response.data) {
+          const pet: Petition = {
+            title: item.title,
+            href: item.href,
+            date: item.date,
+            description: item.description,
+            imageHref: item.imageHref,
+            goal: item.goal,
+            signatures: item.signatures,
+          };
+          if (pet.title !== "") {
+            arr.push(pet);
+          }
+          setPetitions(arr);
+        }
+      });
+   }, []);
   const handleMenuSort = (key: any) => {
     if (key === "hot") {
       setPetitions(
@@ -33,23 +64,6 @@ const Petitions = () => {
       );
     }
   };
-
-  useEffect(() => {
-    const REQUEST_URL = (
-      process.env.REACT_APP_MODE === 'integrated' ? 'http://localhost:5000' : (
-          process.env.REACT_APP_MODE === 'production' ? 'http://pocket-justice.herokuapp.com' : 'http://localhost:3000'
-      )
-    );
-    console.log(process.env.REACT_APP_MODE);
-    axios.get(`${REQUEST_URL}/petitions`, {
-      headers: {
-        'Access-Control-Allow-Origin': `${REQUEST_URL}`,
-        'Access-Control-Allow-Credentials': 'true'
-      }
-    }).then((response: any) => {
-      setPetitions(response.data);
-    });
-  }, []);
 
   const style: {
     display: string;
