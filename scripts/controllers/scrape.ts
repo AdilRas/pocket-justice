@@ -28,7 +28,14 @@ export const scrape = () => {
     python.on("close", (code: any) => {
       console.log(`child process close all stdio with code ${code}`);
       // send data to browser
-      const petitionResponse: any[] = JSON.parse(dataToSend);
+      let petitionResponse: any[] = [];
+      try {
+        petitionResponse = JSON.parse(dataToSend);
+      } catch (err) {
+        console.log(`Error parsing json. Skipping scraper "${scraper}"`);
+        dataToSend = "";
+        return;
+      }
       for (let req of petitionResponse) {
         const petition = new Petition({
           _id: req.title,
