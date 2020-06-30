@@ -78,12 +78,18 @@ const Home = () => {
         </Col>
 
       </Row>
-      <div className="home-footer">
-        <q>
-          There comes a time when silence is betrayal
-        </q>
-        <Divider><p style={{fontSize: 18, margin: 0, padding: 0}}>MLK, Jr.</p></Divider>
-      </div>
+      <Row justify="center" align="middle">
+        <Col>
+          <div className="home-footer">
+            <q>
+              There comes a time when silence is betrayal
+            </q>
+            <Divider><p style={{ fontSize: 18, margin: 0, padding: 0 }}>MLK, Jr.</p></Divider>
+          </div>
+        </Col>
+        
+      </Row>
+      
     </div>
   );
 };
