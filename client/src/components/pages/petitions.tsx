@@ -60,6 +60,7 @@ const Petitions = () => {
     justifyContent: "center",
     alignitems: "center",
   };
+  
   return (
     <div className="petitions-page">
       <div>
