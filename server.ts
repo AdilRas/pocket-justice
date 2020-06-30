@@ -22,9 +22,16 @@ server.use(cors({
 console.log('Client url detected: ' + clientURL);
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
-server.use(express.static('client/build'));
-server.use('/', petitionsRoute);
-server.use('*', express.static('client/build'));
+if (process.env.NODE_ENV === 'production') {
+    server.use(express.static('client/build'));
+    server.use('*', express.static('client/build'));
+}
+
+server.use('/petitions', petitionsRoute);
+
+server.get('*', function (res: any, req: any) {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 /* --- CONNECT TO DATABASE --- */
 mongoose.connect(
