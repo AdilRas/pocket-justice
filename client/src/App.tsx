@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Petitions from "./components/pages/petitions";
 import Home from "./components/pages/home";
+import About from "./components/pages/about";
 import "antd/dist/antd.css";
 import SideNav from "./components/sideNav/sideNav";
 import { fetchData } from "./scripts/util";
@@ -15,10 +16,9 @@ import {
   withRouter,
 } from "react-router-dom";
 
-function App() {
 
+function App() {
   var path = window.location.pathname;
-  
 
   const handleNav = (e: any) => {
     fetchData();
@@ -35,6 +35,7 @@ function App() {
           <Switch>
             <Route exact path="/home" component={Home}></Route>
             <Route exact path="/petitions" component={Petitions}></Route>
+            <Route exact path="/about" component={About}></Route>
             <Route exact path="/">
               <Redirect to="/home" />
             </Route>

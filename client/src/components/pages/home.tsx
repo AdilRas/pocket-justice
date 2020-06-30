@@ -4,8 +4,8 @@ import "./home.css";
 const Home = () => {
   return (
       <div className="Pocketjustice">
-        <p className="titletext">Pocket Justice</p>
-        <p className="description">
+        <p className="titletext-home">Pocket Justice</p>
+        <p className="description-home">
           The power to find all you want to know about #BLM and other movements
           right in your pocket
         </p>

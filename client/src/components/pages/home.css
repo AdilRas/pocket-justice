@@ -10,7 +10,7 @@
   background-size: cover;
   background-color: #cccccc; /*backup*/
 }
-.titletext {
+.titletext-home {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -24,7 +24,7 @@
 
   color: #ffffff;
 }
-.description {
+.description-home {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: normal;

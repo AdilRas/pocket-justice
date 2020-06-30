@@ -1,0 +1,67 @@
+@import url("https://fonts.google.com/specimen/Montserrat");
+.aboutUs-page {
+    width: 100%;
+    height: 100%
+}
+
+.aboutUs-header {
+  /*width: 1540px;
+  height: 350px;*/
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 30%;
+  
+  background-size: cover;
+  background-color:#F4F4F4; /*backup*/
+}
+.aboutUs-title {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 59px;
+  text-align: center;
+  border-bottom: 2px solid currentColor;
+
+  position: relative;
+  top: 110%;
+  left: 0%;
+
+  color: black;
+}
+.aboutUs-description {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  position: relative;
+  top: 30%;
+  left: 0%;
+
+  color: black;
+}
+
+.aboutUs-content {
+    display: inline;
+    overflow: hidden;
+}
+
+.aboutUs-content-text {
+    background-color: #E5E5E5;
+    width:50%;
+    vertical-align:top;
+    display: inline-block;
+}
+
+.aboutUs-content-image {
+    background-color: #E5E5E5;
+    width:50%;
+    height: 100%;
+    vertical-align:top;
+    display: inline-block;
+    overflow: hidden;
+}
