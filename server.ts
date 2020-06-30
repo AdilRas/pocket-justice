@@ -24,10 +24,13 @@ server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 if (process.env.NODE_ENV === 'production') {
     server.use(express.static('client/build'));
+    server.use('/petitions', petitionsRoute);
+    server.use('*', express.static('client/build'));
+} else {
+    server.use(express.static('client/build'));
+    server.use('/petitions', petitionsRoute);
     server.use('*', express.static('client/build'));
 }
-
-server.use('/petitions', petitionsRoute);
 
 server.get('*', function (res: any, req: any) {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));

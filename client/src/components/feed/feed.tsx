@@ -6,7 +6,7 @@ import CardMetadata from './CardMetadata';
 const Feed = (props: any) => {
 
   const getDescription = (desc: string) => {
-    return desc.length > 500 ? `${desc.substr(0, 497)}...` : desc;
+    return desc == undefined ? "" : (desc.length > 500 ? `${desc.substr(0, 497)}...` : desc);
   };
   const getAvatar = (href: string): string => {
     const paths = [
@@ -28,7 +28,7 @@ const Feed = (props: any) => {
               href: petition.href,
               title: petition.title,
               avatar: getAvatar(petition.href),
-              description: `Sourced from ${petition.href.split(".")[1]}.${
+              description: petition.href == undefined ? "" : `Sourced from ${petition.href.split(".")[1]}.${
               petition.href.split(".")[2].split("/")[0]
               }`,
               content: getDescription(petition.description),
