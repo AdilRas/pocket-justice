@@ -4,11 +4,12 @@ const Petition = require('../../models/Petition');
 const nodePath = require('path');
 
 const BASE_PATH = 'scripts/scraping/';
-const scrapers = ['changeorg.py'];
+const scrapers = ['thepetitionsite.py', 'changeorg.py'];
 
 export const scrape = () => {
     console.log('Began scraping...');
   for (const scraper of scrapers) {
+    console.log(`Running scraper "${scraper}"`);
     const path = nodePath.resolve(BASE_PATH, scraper);
 
     var dataToSend: string = "";
@@ -27,7 +28,14 @@ export const scrape = () => {
     python.on("close", (code: any) => {
       console.log(`child process close all stdio with code ${code}`);
       // send data to browser
-      const petitionResponse: any[] = JSON.parse(dataToSend);
+      let petitionResponse: any[] = [];
+      try {
+        petitionResponse = JSON.parse(dataToSend);
+      } catch (err) {
+        console.log(`Error parsing json. Skipping scraper "${scraper}"`);
+        dataToSend = "";
+        return;
+      }
       for (let req of petitionResponse) {
         const petition = new Petition({
           _id: req.title,
@@ -42,6 +50,7 @@ export const scrape = () => {
           petition.save().catch((err: any) => {
             console.log(err.toString());
           });
+          dataToSend = "";
         } catch (err) {
           console.log(err.toString().substr(0, 50));
         }
