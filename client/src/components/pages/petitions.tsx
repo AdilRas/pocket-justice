@@ -25,7 +25,7 @@ const Petitions = () => {
       );
     } else if (key === "new") {
       setPetitions(
-        petitions.sort((a: any, b: any) => a.date - b.date)
+        petitions.reverse()
       );
     } else if (key === "top") {
       setPetitions(
@@ -61,7 +61,7 @@ const Petitions = () => {
     alignitems: "center",
   };
   return (
-    <div>
+    <div className="petitions-page">
       <div>
         <TopNav handleMenuClick={handleMenuClick} state={state} />
       </div>
