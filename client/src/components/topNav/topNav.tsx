@@ -8,11 +8,12 @@ import {
 
 const TopNav = (props: any) => {
   return (
-    <div>
+    <div >
       <Menu
         onClick={props.handleMenuClick}
         selectedKeys={[props.state]}
         mode="horizontal"
+        style={{backgroundColor: "#e5e5e5"}}
       >
         <Menu.Item key="new" id="new" icon={<AlertFilled />}>
           New

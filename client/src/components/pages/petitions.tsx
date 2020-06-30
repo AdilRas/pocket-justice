@@ -3,6 +3,7 @@ import TopNav from "../topNav/topNav";
 import Feed from "../feed/feed";
 import axios from "axios";
 import Petition from "../../models/Petition";
+import "./petitions.css";
 
 const Petitions = () => {
   const [state, setState] = useState("new");
