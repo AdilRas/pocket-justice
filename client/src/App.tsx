@@ -12,7 +12,6 @@ import {
   Route,
   Redirect,
   useHistory,
-  withRouter,
 } from "react-router-dom";
 
 

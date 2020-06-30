@@ -10,7 +10,7 @@ const Petitions = () => {
 
   const handleMenuClick = (e: any) => {
 
-    console.log("click ", e);
+    console.log("click ", e.key);
     setState(e.key);
     handleMenuSort(e.key);
   };
@@ -32,11 +32,12 @@ const Petitions = () => {
         },
       })
       .then((response: any) => {
+        let ind = 0;
         for (const item of response.data) {
           const pet: Petition = {
             title: item.title,
             href: item.href,
-            date: item.date,
+            date: `${ind++}`,
             description: item.description,
             imageHref: item.imageHref,
             goal: item.goal,
@@ -56,7 +57,7 @@ const Petitions = () => {
       );
     } else if (key === "new") {
       setPetitions(
-        petitions.reverse()
+        petitions.sort((a: any, b: any) => a.date - b.date)
       );
     } else if (key === "top") {
       setPetitions(

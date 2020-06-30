@@ -34,7 +34,7 @@ export default function PetitionList({ petitions }: { petitions: any[] }) {
             >
               <List.Item.Meta
                 avatar={<Avatar src={item.avatar} />}
-                title={<a href={item.href} target="_blank">{item.title}</a>}
+                title={<a href={item.href} target="_blank" rel="noopener noreferrer">{item.title}</a>}
                 description={item.description}
               />
               {item.content}

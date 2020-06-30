@@ -14,9 +14,9 @@ const Feed = (props: any) => {
       "https://image.flaticon.com/icons/png/512/49/49300.png", // The Petition Site logo
       "https://image.flaticon.com/icons/svg/25/25284.svg",     // External link icon
     ];
-    if (href.indexOf('change.org') > 0) {
+    if (href && href.indexOf('change.org') > 0) {
       return paths[0];
-    } else if (href.indexOf('thepetitionsite') > 0) {
+    } else if (href && href.indexOf('thepetitionsite') > 0) {
       return paths[1];
     }
     return paths[2];
