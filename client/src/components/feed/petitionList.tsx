@@ -17,11 +17,6 @@ export default function PetitionList({ petitions }: { petitions: any[] }) {
           }}
           dataSource={petitions}
           style={{marginBottom: 0}}
-          footer={
-            <div>
-              <b>Pocket Justice does not own the rights to the content displayed in the above list</b>
-            </div>
-          }
           renderItem={(item: CardMetadata) => (
             <List.Item
               key={item.title}
@@ -49,6 +44,9 @@ export default function PetitionList({ petitions }: { petitions: any[] }) {
             </List.Item>
           )}
         />
+        <div>
+          <b>Pocket Justice does not own the rights to the content displayed in the above list</b>
+        </div>
       </div>
     );
 }
