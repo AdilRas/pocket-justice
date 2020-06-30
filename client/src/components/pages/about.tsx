@@ -21,7 +21,7 @@ const About = () => {
             Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
             Blah Blah Blah Blah Blah Blah Blah Blah
           </p>
-          <h1 className="aboutUs-content-text-h1">Our essence:</h1>
+          <h1 className="aboutUs-content-text-h1">Our product:</h1>
           <p className="aboutUs-content-text-p">
             Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
             Blah Blah Blah Blah Blah Blah Blah Blah
