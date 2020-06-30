@@ -7,7 +7,7 @@ import image1 from "./blm_logo_grey.png"
 import { useHistory } from "react-router-dom";
 
 const SideNav = (props: any) => {
-  const [selected, setSelected] : [any, Dispatch<string[]>] = useState([window.location.pathname.substr(1)]);
+  const [selected, setSelected] : [any, Dispatch<string[]>] = useState([window.location.pathname.replaceAll("/", "")]);
   const [collapsed, setCollapsed] = useState(true);
   const history = useHistory();
 
