@@ -24,6 +24,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 server.use(express.static('client/build'));
 server.use('/', petitionsRoute);
+server.use('*', express.static('client/build'));
 
 /* --- CONNECT TO DATABASE --- */
 mongoose.connect(

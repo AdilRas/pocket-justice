@@ -38,25 +38,12 @@ router.post('/petitions', async (req: any, res: any) => {
         console.log(err);
 });
 
-router.get("/home", function (res: any, req: any) {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-router.get("/petition", function (res: any, req: any) {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
-router.get("/about", function (res: any, req: any) {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
 router.get("/", function (res: any, req: any) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 router.get('*', function (res: any, req: any) {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
-
-router.get("/.*", function (res: any, req: any) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
 module.exports = router;
