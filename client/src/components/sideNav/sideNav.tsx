@@ -1,7 +1,9 @@
 import React, { useState, useEffect, Dispatch } from "react";
 import { Menu, Button, AutoComplete } from "antd";
 import "./sideNav.css";
+
 import Icon, { HomeOutlined, ReadOutlined, TeamOutlined, MenuFoldOutlined, MenuUnfoldOutlined, LogoutOutlined } from '@ant-design/icons';
+import image1 from "./blm_logo_grey.png"
 
 const SideNav = (props: any) => {
   const [selected, setSelected] : [any, Dispatch<string[]>] = useState([""]);
@@ -27,6 +29,7 @@ const SideNav = (props: any) => {
         backgroundColor: "#001529",
       }}
     >
+      <img src={image1} style={{width:"100px", height:"auto", paddingTop:"5%"}}/>
       <Button
         type="primary"
         onClick={toggleCollapsed}
