@@ -39,7 +39,7 @@ function App() {
         <div className="switcher" style={{overflow: `${scrollerVisible ? 'auto' : 'hidden'}`}}>
           <Switch>
             <Route exact path="/home" component={Home}></Route>
-            <Route exact path="/petitions" component={Petitions}></Route>
+            <Route exact path="/petition" component={Petitions}></Route>
             <Route exact path="/about" component={About}></Route>
             <Route exact path="/">
               <Redirect to="/home" />

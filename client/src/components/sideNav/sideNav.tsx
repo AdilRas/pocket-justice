@@ -77,8 +77,8 @@ const SideNav = (props: any) => {
           Home
         </Menu.Item>
         <Menu.Item
-          key="petitions"
-          id="petitions"
+          key="petition"
+          id="petition"
           icon={<ReadOutlined />}
           style={flexCenter}
         >
