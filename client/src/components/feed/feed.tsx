@@ -25,14 +25,16 @@ const Feed = (props: any) => {
       const listData: CardMetadata[] = [];
           for (let petition of petitions) {
           listData.push({
-              href: petition.href,
-              title: petition.title,
-              avatar: getAvatar(petition.href),
-              description: petition.href === undefined ? "" : `Sourced from ${petition.href.split(".")[1]}.${
-              petition.href.split(".")[2].split("/")[0]
-              }`,
-              content: getDescription(petition.description),
-              imageHref: petition.imageHref
+            href: petition.href,
+            title: petition.title,
+            avatar: getAvatar(petition.href),
+            description: petition.href === undefined ? "" : `Sourced from ${petition.href.split(".")[1]}.${
+            petition.href.split(".")[2].split("/")[0]
+            }`,
+            content: getDescription(petition.description),
+            imageHref: petition.imageHref,
+            signatures: petition.signatures,
+            goal: petition.goal
           });
           // console.log(`Added petition: ${petition.title}`);
       }

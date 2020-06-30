@@ -5,4 +5,6 @@ export default class CardMetadata {
     description: string = "";
     content: string = "";
     imageHref: string = "";
+    goal: string = "";
+    signatures: string = "";
 }
