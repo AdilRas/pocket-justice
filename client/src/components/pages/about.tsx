@@ -1,5 +1,6 @@
 import React from "react";
 import "./about.css";
+import image from "./dyk.jpg";
 
 const About = () => {
   return (
@@ -15,17 +16,26 @@ const About = () => {
       </div>
       <div className="aboutUs-content">
         <div className="aboutUs-content-text">
-            <h1>
-                text
-            </h1>
-            <p>
-                make this crap go to the bottom of the screen
-            </p>
+          <h1 className="aboutUs-content-text-h1">How we began:</h1>
+          <p className="aboutUs-content-text-p">
+            Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
+            Blah Blah Blah Blah Blah Blah Blah Blah
+          </p>
+          <h1 className="aboutUs-content-text-h1">Our essence:</h1>
+          <p className="aboutUs-content-text-p">
+            Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
+            Blah Blah Blah Blah Blah Blah Blah Blah
+          </p>
+          <h1 className="aboutUs-content-text-h1">Our experience:</h1>
+          <p className="aboutUs-content-text-p">
+            Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
+            Blah Blah Blah Blah Blah Blah Blah Blah
+          </p>
         </div>
         <div className="aboutUs-content-image">
-            <h1>
-                image
-            </h1>
+          <div className="aboutUs-content-image-container">
+            <img src={image} style={{ height: "500px", width:"auto" }} />
+          </div>
         </div>
       </div>
     </div>

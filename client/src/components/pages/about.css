@@ -46,22 +46,42 @@
 }
 
 .aboutUs-content {
-    display: inline;
+    height: 70%;
     overflow: hidden;
 }
 
 .aboutUs-content-text {
     background-color: #E5E5E5;
-    width:50%;
+    width:60%;
+    height: 100%;
+    text-align: left;
+    padding-left: 20%;
     vertical-align:top;
     display: inline-block;
+    padding-top: 50px;
 }
 
 .aboutUs-content-image {
     background-color: #E5E5E5;
-    width:50%;
+    width:40%;
     height: 100%;
     vertical-align:top;
+    text-align: left;
     display: inline-block;
     overflow: hidden;
 }
+
+.aboutUs-content-image-container {
+    padding-top: 10%;
+}
+
+.aboutUs-content-text-h1 {
+    padding-top:45px;
+}
+
+.aboutUs-content-text-p {
+    display: inline-block;
+    width:80%;
+}
+
+

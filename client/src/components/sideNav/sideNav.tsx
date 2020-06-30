@@ -18,6 +18,9 @@ const SideNav = (props: any) => {
         mode="inline"
         theme="dark"
       >
+        <Menu.Item>
+          
+        </Menu.Item>
         <Menu.Item key="home" id="home" icon={<HomeOutlined />}>
           Home
         </Menu.Item>
