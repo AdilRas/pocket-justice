@@ -1,24 +1,53 @@
-import React, { useState } from "react";
-import { Menu } from "antd";
+import React, { useState, useEffect, Dispatch } from "react";
+import { Menu, Button, AutoComplete } from "antd";
 import "./sideNav.css";
-import { HomeOutlined, ReadOutlined, TeamOutlined } from '@ant-design/icons';
+
+import Icon, { HomeOutlined, ReadOutlined, TeamOutlined, MenuFoldOutlined, MenuUnfoldOutlined, LogoutOutlined } from '@ant-design/icons';
 import image1 from "./blm_logo_grey.png"
 
 const SideNav = (props: any) => {
-  // const [selected, setSelected] = useState("home");
-  const fetchKey = () => {
-    console.log(window.location.pathname);
-    return [window.location.pathname];
-  };
+  const [selected, setSelected] : [any, Dispatch<string[]>] = useState([""]);
+  const [collapsed, setCollapsed] = useState(true);
+
+  useEffect(() => {
+    const arr: string[] = [];
+    arr.push(window.location.pathname.substr(1));
+    setSelected(arr);
+  }, []);
+
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  }
+
   return (
-    <div style={{backgroundColor:"#001529"}}>
+    <div
+      style={{
+        width: `${collapsed ? "auto" : "256px"}`,
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "#001529",
+      }}
+    >
       <img src={image1} style={{width:"100px", height:"auto", paddingTop:"5%"}}/>
+      <Button
+        type="primary"
+        onClick={toggleCollapsed}
+        style={{
+          border: "none",
+          backgroundColor: "#001529",
+          paddingTop: 7,
+        }}
+      >
+        {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
+      </Button>
       <Menu
         onClick={props.handleNav}
-        selectedKeys={fetchKey()}
-        style={{ width: 256 , height:"100%"}}
-        mode="inline"
+        selectedKeys={selected}
+        style={{ height: "100%", width: `100%`, margin: 0 }}
+        mode="vertical"
         theme="dark"
+        inlineCollapsed={collapsed}
       >
         <Menu.Item key="home" id="home" icon={<HomeOutlined />}>
           Home

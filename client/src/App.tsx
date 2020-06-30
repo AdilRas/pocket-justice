@@ -27,11 +27,16 @@ function App() {
     window.location.reload();
   };
 
+  const [scrollerVisible, setVisible] = useState(false);
+
   return (
     <Router>
-      <div className="App" style={{ display: "flex", outline: "none" }}>
+      <div className="App" style={{ display: "flex", outline: "none" }}
+        onMouseOver={() => { setVisible(true) }}
+        onMouseOut={() => setVisible(false)}
+      >
         <SideNav handleNav={handleNav} state={path} />
-        <div className="switcher">
+        <div className="switcher" style={{overflow: `${scrollerVisible ? 'auto' : 'hidden'}`}}>
           <Switch>
             <Route exact path="/home" component={Home}></Route>
             <Route exact path="/petitions" component={Petitions}></Route>
