@@ -1,4 +1,4 @@
-import React, { useState, Dispatch } from "react";
+import React, { useState, Dispatch, useEffect } from "react";
 import { Menu, Button } from "antd";
 import "./sideNav.css";
 
@@ -16,7 +16,9 @@ const SideNav = (props: any) => {
     console.log('OLD: ' + selected);
     setSelected([e.key]);
   }
-
+  useEffect(() => {
+    setSelected([window.location.pathname.toString().substr(1).replace("/", "")]);
+  }, [history])
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   }
