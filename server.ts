@@ -43,6 +43,7 @@ mongoose.connect(
 );
 
 /* SCRAPE DATA FROM PETITION SITES ON 30 MINUTE INTERVALS */
+scrape();
 setInterval(() => {
     scrape();
 }, 1000 * 60 * 30);

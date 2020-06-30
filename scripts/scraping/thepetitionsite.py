@@ -22,13 +22,13 @@ def printData():
     for i, petition in enumerate(petitions):
         if int(petition.signatures) < 1000:
             continue
-        foundKeyword = False
-        for word in words:
-            if petition.title.lower().__contains__(word.lower()) or petition.description.lower().__contains__(word.lower()):
-                foundKeyword = True
-                break
-        if not foundKeyword:
-            continue
+        # foundKeyword = False
+        # for word in words:
+        #     if petition.title.lower().__contains__(word.lower()) or petition.description.lower().__contains__(word.lower()):
+        #         foundKeyword = True
+        #         break
+        # if not foundKeyword:
+        #     continue
         print(',' if i > 0 else '')
         print(petition.toJsonString(), end='')
         # print((repr(petition.toJsonString().encode('utf-8')))[2:-1], end="")
