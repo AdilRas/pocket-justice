@@ -25,7 +25,7 @@ const About = () => {
           <p className="aboutUs-content-text-p">
             Pocket Justice stores petitions from multiple popular sites in one place for your convenience! 
             Here you can find the newest and most popular petitions from around the web and quickly maximize your positive impact on society.
-            (Someone please make this sound good)
+            
 
           </p>
           <h1 className="aboutUs-content-text-h1">The creators</h1>
