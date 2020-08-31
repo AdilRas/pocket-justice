@@ -37,7 +37,8 @@
   margin: 0 2rem 0 2rem;
 }
 .captioned-figure img {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 1.2rem;
   border: 0;
   height: 220px;
   width: auto;

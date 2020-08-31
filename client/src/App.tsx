@@ -27,12 +27,9 @@ function App() {
 
   return (
     <Router>
-      <div className="App" style={{ display: "flex", outline: "none" }}
-        onMouseOver={() => { setVisible(true) }}
-        onMouseOut={() => setVisible(false)}
-      >
+      <div className="App" style={{ display: "flex"}}>
         <SideNav handleNav={handleNav} state={path} />
-        <div className="switcher" style={{overflow: `${scrollerVisible ? 'auto' : 'hidden'}`}}>
+        <div className="switcher">
           <Switch>
             <Route exact path="/home" component={(Home)}></Route>
             <Route exact path="/petition" component={(Petitions)}></Route>

@@ -47,8 +47,8 @@ const Petitions = () => {
           if (pet.title !== "") {
             arr.push(pet);
           }
-          setPetitions(arr);
         }
+        setPetitions(arr);
       });
    }, []);
   const handleMenuSort = (key: any) => {
