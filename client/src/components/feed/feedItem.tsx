@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "antd";
 import { Progress } from "antd";
+import styles from './feedItem.module.css';
 
 const { Meta } = Card;
 
@@ -9,17 +10,17 @@ const FeedItem = (props: any) => {
     window.open(props.petition.href);
   };
   var desc;
- if(props.petition.description.length <= 500){
-  desc = props.petition.description.substr(0,500);
- }
- else{
-    desc = props.petition.description.substr(0,500) + "...";
- }
+  if(props.petition.description.length <= 500){
+    desc = props.petition.description.substr(0,500);
+  }
+  else{
+      desc = props.petition.description.substr(0,500) + "...";
+  }
   
 
   return (
-    <div>
-      <Card
+    <div className={styles.petitioncard}>
+      <Card 
         hoverable
         style={{ display: "flex" }}
         cover={

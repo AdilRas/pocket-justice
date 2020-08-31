@@ -35,11 +35,11 @@ const About = () => {
           </p>
           <h1 className="aboutUs-content-text-h1">Contact us:</h1>
           <p className="aboutUs-content-text-p">
-            Nikhil: nikhil.houston@tamu.edu
+            Adil: adil.rasiyani@tamu.edu
             <br/>
             James: james.wang@tamu.edu
             <br/>
-            Adil: adil.rasiyani@tamu.edu
+            Nikhil: nikhil.houston@tamu.edu
           </p>
         </div>
         <div className="aboutUs-content-image">

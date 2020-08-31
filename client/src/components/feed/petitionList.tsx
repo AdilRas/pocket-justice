@@ -1,6 +1,7 @@
 import { List, Avatar, Progress } from "antd";
 import CardMetadata from './CardMetadata';
 import React from 'react';
+import styles from './peitionList.module.css'
 
 export default function PetitionList({ petitions }: { petitions: any[] }) {  
 
@@ -16,9 +17,10 @@ export default function PetitionList({ petitions }: { petitions: any[] }) {
             pageSize: 4,
           }}
           dataSource={petitions}
-          style={{marginBottom: 0}}
+          style={{marginBottom: 0, display: "flex", alignItems: "center", flexDirection: "column"}}
           renderItem={(item: CardMetadata) => (
             <List.Item
+              className={styles.card}
               key={item.title}
               extra={
                 <img
