@@ -25,13 +25,13 @@ const About = () => {
           <p className="aboutUs-content-text-p">
             Pocket Justice stores petitions from multiple popular sites in one place for your convenience! 
             Here you can find the newest and most popular petitions from around the web and quickly maximize your positive impact on society.
-            (Someone please make this sound good)
+            
 
           </p>
           <h1 className="aboutUs-content-text-h1">The creators</h1>
           <p className="aboutUs-content-text-p">
             We're three computer science students from Texas A&M university who wanted to use technology to aid growing movements like BLM in some way.
-            Adil Rasiyani (left) enjoys creating new things and playing badminton, James Wang (middle) is an avid web novel reader who is also the life of the party, and Nikhil Singh (right) likes to play freeze tag and do anything other than study.
+           We enjoy playing racket sports like badminton and learning new things in our free time.
           </p>
           <h1 className="aboutUs-content-text-h1">Contact us:</h1>
           <p className="aboutUs-content-text-p">
