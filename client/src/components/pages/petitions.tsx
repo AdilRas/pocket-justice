@@ -21,7 +21,7 @@ const Petitions = () => {
       process.env.REACT_APP_MODE === "integrated"
         ? "http://localhost:5000"
         : process.env.REACT_APP_MODE === "production"
-        ? "http://pocket-justice.herokuapp.com"
+        ? "https://pocket-justice.herokuapp.com"
         : "http://localhost:3000";
     console.log(process.env.REACT_APP_MODE);
     const arr: Petition[] = [];
